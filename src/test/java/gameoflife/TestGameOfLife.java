@@ -16,9 +16,23 @@ public class TestGameOfLife {
         boolean[][] board = {
                 {false, false, false},
                 {false, true, false},
-                {false, false, false}
-        };
+                {false, false, false}};
         GameOfLife gameOfLife = new GameOfLife(board);
         Assertions.assertArrayEquals(board, gameOfLife.getBoard());
+    }
+
+    @Test
+    void any_live_cell_with_fewer_than_two_live_neighbours_dies(){
+        boolean[][] initial_board = {
+                {false, false, false},
+                {false, true, false},
+                {false, false, false}};
+        boolean[][] expected_board = {
+                {false, false, false},
+                {false, false, false},
+                {false, false, false}};
+        GameOfLife gameOfLife = new GameOfLife(initial_board);
+        gameOfLife.nextGen();
+        Assertions.assertArrayEquals(expected_board, gameOfLife.getBoard());
     }
 }
