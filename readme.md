@@ -1,4 +1,6 @@
-#Instructions
+[![Build Status](https://travis-ci.org/fermt18/gameoflife.svg?branch=master)](https://travis-ci.org/fermt18/gameoflife)
+
+# Instructions
 Implement a finite version of Conway's Game of Life.
 
 Here are the rules (courtesy of Wikipedia):
@@ -18,6 +20,6 @@ public class GameOfLife {
   public void nextGen();
 }
 ```
-###Notes
+### Notes
 The dimensions of the array stay constant throughout the game - the 'universe' never grows.
 Cells outside the bounds of the array should be considered permanently dead (they never come to life).
