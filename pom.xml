@@ -38,6 +38,30 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <configuration>
+                    <properties>
+                        <includeTags>lifecycle</includeTags>
+                        <excludeTags>second</excludeTags>
+                    </properties>
+                </configuration>
+                <dependencies>
+                    <!-- engine for new Junit5 tests -->
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>${junit5.platform.version}</version>
+                    </dependency>
+                    <!-- engine for legacy Junit4 tests (junit4 dependency is needed) -->
+                    <dependency>
+                        <groupId>org.junit.vintage</groupId>
+                        <artifactId>junit-vintage-engine</artifactId>
+                        <version>${junit5.platform.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
         </plugins>
     </build>
 </project>
