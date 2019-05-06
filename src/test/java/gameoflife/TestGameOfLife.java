@@ -22,7 +22,7 @@ public class TestGameOfLife {
     }
 
     @Test
-    void any_live_cell_with_fewer_than_two_live_neighbours_dies(){
+    void any_live_cell_with_fewer_than_two_live_neighbours_dies_1(){
         boolean[][] initial_board = {
                 {false, false, false},
                 {false, true, false},
@@ -30,6 +30,36 @@ public class TestGameOfLife {
         boolean[][] expected_board = {
                 {false, false, false},
                 {false, false, false},
+                {false, false, false}};
+        GameOfLife gameOfLife = new GameOfLife(initial_board);
+        gameOfLife.nextGen();
+        Assertions.assertArrayEquals(expected_board, gameOfLife.getBoard());
+    }
+
+    @Test
+    void any_live_cell_with_fewer_than_two_live_neighbours_dies_2(){
+        boolean[][] initial_board = {
+                {false, true, false},
+                {false, true, false},
+                {false, false, false}};
+        boolean[][] expected_board = {
+                {false, false, false},
+                {false, false, false},
+                {false, false, false}};
+        GameOfLife gameOfLife = new GameOfLife(initial_board);
+        gameOfLife.nextGen();
+        Assertions.assertArrayEquals(expected_board, gameOfLife.getBoard());
+    }
+
+    @Test
+    void any_live_cell_with_fewer_than_two_live_neighbours_dies_3(){
+        boolean[][] initial_board = {
+                {false, true, false},
+                {false, true, false},
+                {false, true, false}};
+        boolean[][] expected_board = {
+                {false, false, false},
+                {false, true, false},
                 {false, false, false}};
         GameOfLife gameOfLife = new GameOfLife(initial_board);
         gameOfLife.nextGen();
