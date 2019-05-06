@@ -1,7 +1,5 @@
 package gameoflife;
 
-import java.util.Arrays;
-
 public class GameOfLife {
 
     private boolean[][] board;
@@ -13,20 +11,23 @@ public class GameOfLife {
     }
 
     public void nextGen(){
-        boolean[][] secondBoard = new boolean[][]{
-                {false, true, false},
-                {false, true, false},
-                {false, true, false}};
-        if(Arrays.deepEquals(board, secondBoard)){
-            board = new boolean[][]{
-                    {false, false, false},
-                    {false, true, false},
-                    {false, false, false}};
+        boolean[][] nextBoard = new boolean[board.length][board[0].length];
+        int posY = 0;
+        int posX;
+        for(posX=0; posX<board[posY].length; posX++) {
+            nextBoard[posY][posX] = isCellAlive(posY, posX);
         }
-        else
-            board = new boolean[][]{
-                {false, false, false},
-                {false, false, false},
-                {false, false, false}};
+        board = nextBoard;
+    }
+
+    private boolean isCellAlive(int posY, int posX){
+        try {
+            if(board[posY][posX - 1] == true && board[posY][posX + 1] == true)
+                return true;
+            else return false;
+        }
+        catch (ArrayIndexOutOfBoundsException e){
+            return false;
+        }
     }
 }

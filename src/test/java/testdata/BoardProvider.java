@@ -30,31 +30,29 @@ public class BoardProvider implements ArgumentsProvider {
         Map<boolean[][], boolean[][]> boardMap = new HashMap<>();
         boardMap.put(
                 new boolean[][] {
-                        {false, false, false},
-                        {false, true, false},
                         {false, false, false}},
                 new boolean[][] {
-                        {false, false, false},
-                        {false, false, false},
                         {false, false, false}});
         boardMap.put(
                 new boolean[][]{
-                        {false, true, false},
-                        {false, true, false},
-                        {false, false, false}},
-                new boolean[][]{
-                        {false, false, false},
-                        {false, false, false},
-                        {false, false, false}});
-        boardMap.put(
-                new boolean[][]{
-                        {false, true, false},
-                        {false, true, false},
                         {false, true, false}},
                 new boolean[][]{
-                        {false, false, false},
-                        {false, true, false},
                         {false, false, false}});
+        boardMap.put(
+                new boolean[][]{
+                        {true, true, false}},
+                new boolean[][]{
+                        {false, false, false}});
+        boardMap.put(
+                new boolean[][]{
+                        {false, true, true}},
+                new boolean[][]{
+                        {false, false, false}});
+        boardMap.put(
+                new boolean[][]{
+                        {true, true, true}},
+                new boolean[][]{
+                        {false, true, false}});
         return boardMap;
     }
 }
