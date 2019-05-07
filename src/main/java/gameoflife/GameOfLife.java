@@ -39,9 +39,15 @@ public class GameOfLife {
         if(isSurroundingCellAlive(posY+1, posX+1))
             surroundingLivingCells++;
 
-        if(board[posY][posX] && surroundingLivingCells >= 2)
-            return true;
-        else return false;
+        if(board[posY][posX]) {
+            if (surroundingLivingCells == 2 || surroundingLivingCells == 3)
+                return true;
+        }
+        else{
+            if(surroundingLivingCells == 3)
+                return true;
+        }
+        return false;
     }
 
     private boolean isSurroundingCellAlive(int posY, int posX){

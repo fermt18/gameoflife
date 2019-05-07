@@ -28,7 +28,7 @@ public class TestGameOfLife {
 
     @ParameterizedTest
     @ArgumentsSource(BoardProvider.class)
-    void any_live_cell_with_fewer_than_two_live_neighbours_dies(Board board){
+    void test_life_rules(Board board){
         System.out.println("Initial Board:");
         printBoard(board.getInitialBoard());
         System.out.println("Next Board:");

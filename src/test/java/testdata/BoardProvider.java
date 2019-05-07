@@ -65,7 +65,7 @@ public class BoardProvider implements ArgumentsProvider {
                         {false, true, false}},
                 new boolean[][]{
                         {false, false, false},
-                        {false, true, false},
+                        {true, true, true},
                         {false, false, false}});
         boardMap.put(
                 new boolean[][]{
@@ -73,9 +73,9 @@ public class BoardProvider implements ArgumentsProvider {
                         {true, true, true},
                         {false, false, false}},
                 new boolean[][]{
-                        {false, false, false},
                         {false, true, false},
-                        {false, false, false}});
+                        {false, true, false},
+                        {false, true, false}});
         boardMap.put(
                 new boolean[][]{
                         {true, false, false},
@@ -91,9 +91,54 @@ public class BoardProvider implements ArgumentsProvider {
                         {true, true, false},
                         {false, false, false}},
                 new boolean[][]{
-                        {true, false, false},
+                        {true, true, false},
                         {true, true, false},
                         {false, false, false}});
+        boardMap.put(
+                new boolean[][]{
+                        {true, false, false},
+                        {false, false, false},
+                        {false, false, true}},
+                new boolean[][]{
+                        {false, false, false},
+                        {false, false, false},
+                        {false, false, false}});
+        boardMap.put(
+                new boolean[][]{
+                        {true, true, false},
+                        {false, false, false},
+                        {false, true, true}},
+                new boolean[][]{
+                        {false, false, false},
+                        {true, false, true},
+                        {false, false, false}});
+        boardMap.put(
+                new boolean[][]{
+                        {true, true, false},
+                        {false, true, false},
+                        {false, true, true}},
+                new boolean[][]{
+                        {true, true, false},
+                        {false, false, false},
+                        {false, true, true}});
+        boardMap.put(
+                new boolean[][]{
+                        {true, true, true},
+                        {false, true, false},
+                        {false, false, false}},
+                new boolean[][]{
+                        {true, true, true},
+                        {true, true, true},
+                        {false, false, false}});
+        boardMap.put(
+                new boolean[][]{
+                        {true, true, true},
+                        {true, true, true},
+                        {true, true, true}},
+                new boolean[][]{
+                        {true, false, true},
+                        {false, false, false},
+                        {true, false, true}});
         return boardMap;
     }
 }
