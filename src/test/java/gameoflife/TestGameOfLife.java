@@ -48,4 +48,19 @@ public class TestGameOfLife {
         }
         System.out.println();
     }
+
+    @Test
+    void test_iteration(){
+        boolean[][] board = new boolean[][]{
+                {true, false, false, true},
+                {true, true, false, false},
+                {true, true, true, false},
+                {false, false, false, true}};
+
+        GameOfLife gameOfLife = new GameOfLife(board);
+        for(int i=0; i<10; i++) {
+            gameOfLife.nextGen();
+            printBoard(gameOfLife.getBoard());
+        }
+    }
 }
