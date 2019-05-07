@@ -1,5 +1,7 @@
 package gameoflife;
 
+import java.util.stream.IntStream;
+
 public class GameOfLife {
 
     private boolean[][] board;
@@ -12,11 +14,13 @@ public class GameOfLife {
 
     public void nextGen(){
         boolean[][] nextBoard = new boolean[board.length][board[0].length];
-        for(int posY=0; posY<board.length; posY++) {
-            for (int posX = 0; posX < board[posY].length; posX++) {
+        //for(int posY=0; posY<board.length; posY++) {
+        IntStream.range(0, board.length).forEach(posY -> {
+            //for (int posX = 0; posX < board[posY].length; posX++) {
+            IntStream.range(0, board[posY].length).forEach(posX -> {
                 nextBoard[posY][posX] = isCellAlive(posY, posX);
-            }
-        }
+            });
+        });
         board = nextBoard;
     }
 
