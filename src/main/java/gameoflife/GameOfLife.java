@@ -21,11 +21,32 @@ public class GameOfLife {
     }
 
     private boolean isCellAlive(int posY, int posX){
-        try {
-            if((board[posY][posX - 1] && board[posY][posX + 1]) ||
-                    (board[posY - 1][posX] && board[posY + 1][posX]))
-                return true;
-            else return false;
+        int surroundingLivingCells = 0;
+        if(isSurroundingCellAlive(posY, posX-1))
+            surroundingLivingCells++;
+        if(isSurroundingCellAlive(posY, posX+1))
+            surroundingLivingCells++;
+        if(isSurroundingCellAlive(posY-1, posX))
+            surroundingLivingCells++;
+        if(isSurroundingCellAlive(posY+1, posX))
+            surroundingLivingCells++;
+        if(isSurroundingCellAlive(posY-1, posX-1))
+            surroundingLivingCells++;
+        if(isSurroundingCellAlive(posY+1, posX-1))
+            surroundingLivingCells++;
+        if(isSurroundingCellAlive(posY-1, posX+1))
+            surroundingLivingCells++;
+        if(isSurroundingCellAlive(posY+1, posX+1))
+            surroundingLivingCells++;
+
+        if(board[posY][posX] && surroundingLivingCells >= 2)
+            return true;
+        else return false;
+    }
+
+    private boolean isSurroundingCellAlive(int posY, int posX){
+        try{
+            return board[posY][posX];
         }
         catch (ArrayIndexOutOfBoundsException e){
             return false;

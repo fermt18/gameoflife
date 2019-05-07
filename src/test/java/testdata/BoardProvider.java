@@ -67,6 +67,33 @@ public class BoardProvider implements ArgumentsProvider {
                         {false, false, false},
                         {false, true, false},
                         {false, false, false}});
+        boardMap.put(
+                new boolean[][]{
+                        {false, false, false},
+                        {true, true, true},
+                        {false, false, false}},
+                new boolean[][]{
+                        {false, false, false},
+                        {false, true, false},
+                        {false, false, false}});
+        boardMap.put(
+                new boolean[][]{
+                        {true, false, false},
+                        {false, true, false},
+                        {false, false, true}},
+                new boolean[][]{
+                        {false, false, false},
+                        {false, true, false},
+                        {false, false, false}});
+        boardMap.put(
+                new boolean[][]{
+                        {true, false, false},
+                        {true, true, false},
+                        {false, false, false}},
+                new boolean[][]{
+                        {true, false, false},
+                        {true, true, false},
+                        {false, false, false}});
         return boardMap;
     }
 }
